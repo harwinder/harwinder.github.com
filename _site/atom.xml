@@ -4,7 +4,7 @@
  <title>Harwinder's Blog</title>
  <link href="http://harwinder.in/atom.xml" rel="self"/>
  <link href="http://harwinder.in/"/>
- <updated>2013-01-02T14:45:23+05:30</updated>
+ <updated>2013-01-03T00:06:20+05:30</updated>
  <id>http://harwinder.in/</id>
  <author>
    <name>Harwinder Sidhu</name>
@@ -21,9 +21,9 @@
 
 &lt;p&gt;&lt;strong&gt;01 Jan 2013 - Chandigarh, India&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;I have trying to write a blog since a long time now. It is just that I could never get started. And, when I started a couple of times, I just did not get used to blogger/wordpress like softwares. And, then I discovered &lt;a href=&quot;https://github.com/mojombo/jekyll&quot; title=&quot;Jekyll&quot;&gt;Jekyll&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I have trying to write a blog since a long time now. It is just that I could never get started. And, when I started a couple of times, I could never get used to softwares like blogger/wordpress. And, then I discovered &lt;a href=&quot;https://github.com/mojombo/jekyll&quot; title=&quot;Jekyll&quot;&gt;Jekyll&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;Jekyll is the blogging platform for hackers. I tried Octopress as well, but I just could not get it to work, as it requires a recent version of Ruby (and yes, rvenv did not work for me).&lt;/p&gt;
+&lt;p&gt;Jekyll is the blogging platform for hackers. I tried Octopress as well, but could not get it to work, as it requires a recent version of Ruby (and yes, rbenv did not work for me).&lt;/p&gt;
 
 &lt;p&gt;With Jekyll:&lt;/p&gt;
 
@@ -33,8 +33,8 @@
 &lt;li&gt; I can write blog in &lt;a href=&quot;http://daringfireball.net/projects/markdown/syntax&quot;&gt;Markdown&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt; serve my blog for free with &lt;a href=&quot;http://pages.github.com&quot;&gt;Github Pages&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt; serve static files instead of messing with a database.&lt;/li&gt;
-&lt;li&gt; handcraft your HTML pages.&lt;/li&gt;
-&lt;li&gt; fork an &lt;a href=&quot;https://github.com/mojombo/jekyll/wiki/sites&quot;&gt;existing blog&lt;/a&gt; on github.&lt;/li&gt;
+&lt;li&gt; handcraft my HTML pages.&lt;/li&gt;
+&lt;li&gt; fork an &lt;a href=&quot;https://github.com/mojombo/jekyll/wiki/sites&quot;&gt;existing blog&lt;/a&gt; on github. It cannot get easier than this.&lt;/li&gt;
 &lt;/ul&gt;
 
 </content>
