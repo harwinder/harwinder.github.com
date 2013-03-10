@@ -7,11 +7,13 @@ body {
 h1, h2 {
     font-family: "Marcellus", sans;
     color: orange;
+    line-height: 110%;
 }
 
 h3, h4, h5 {
     font-family: "Marcellus", sans;
     color: lightblue;
+    line-height: 110%;
 }
 
 a {
