@@ -4,13 +4,113 @@
  <title>Harwinder's Blog</title>
  <link href="http://harwinder.in/atom.xml" rel="self"/>
  <link href="http://harwinder.in/"/>
- <updated>2013-01-03T00:06:20+05:30</updated>
+ <updated>2013-03-10T15:41:37+05:30</updated>
  <id>http://harwinder.in/</id>
  <author>
    <name>Harwinder Sidhu</name>
    <email>harwinder@gmail.com</email>
  </author>
  
+ 
+ <entry>
+   <title>Installing Debian Squeeze on Dell PowerEdge R420</title>
+   <link href="http://harwinder.in/blog/2013/02/21/install-debian-squeeze-on-dell-poweredge"/>
+   <updated>2013-02-21T00:00:00+05:30</updated>
+   <id>http://boj.github.com/blog/2013/02/21/install-debian-squeeze-on-dell-poweredge</id>
+   <content type="html">&lt;h1&gt;Installing Debian Squeeze on Dell PowerEdge R420&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;21 Feb 2013 - Chandigarh, India&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I am a big fan of Debian. Debian is not bleeding edge (though there is &quot;unstable&quot; and &quot;experimental&quot;), Debian does not have a time-based release cycle. The thing I like the most about Debian is that they are so damn stable. I love apt-get. I use Debian on all the production machines I run.&lt;/p&gt;
+
+&lt;p&gt;Recently, we bought these new Dell PowerEdge R420 machines. Debian installation was a breeze except that the Ethernet controller (Broadcom) would not show up. Accompanying Dell manuals suggested I go in for Redhat/SuSE, which are supported out of the box, as these Dell servers came with some management CD-ROM, which would load some drivers etc. Since, the network interface would not come up and I had only the first installation CD, I could not download anything with apt-get.&lt;/p&gt;
+
+&lt;p&gt;Solution is to do a basic install and download a newer kernel from &lt;a href=&quot;http://packages.debian.org/search?suite=squeeze-backports&amp;amp;section=all&amp;amp;arch=any&amp;amp;searchon=names&amp;amp;keywords=linux-image-3.2&quot;&gt;squeeze-backports&lt;/a&gt;, which supports these newer hardware. All, I had to do was download the following packages:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;linux-image-3.2.0-0.bpo.4-amd64
+firmware-linux-free
+initramfs-tools
+linux-base
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Copy these packages to a USB drive and then to the Dell machine. A quick reboot, and I could see the Ethernet controllers:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;02:00.0 Ethernet controller: Broadcom Corporation Device 165f
+02:00.1 Ethernet controller: Broadcom Corporation Device 165f
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Abusing Function Parameters</title>
+   <link href="http://harwinder.in/blog/2013/01/31/abusing-function-parameters"/>
+   <updated>2013-01-31T00:00:00+05:30</updated>
+   <id>http://boj.github.com/blog/2013/01/31/abusing-function-parameters</id>
+   <content type="html">&lt;h1&gt;Abusing Function Parameters&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;31 Jan 2013 - Chandigarh, India&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;Functions are the building blocks for procedural programming. They are very useful constructs, which increases modularity of a program. Inputs to a function are usually specified as parameters and output is generally available from the function in the form of return value.&lt;/p&gt;
+
+&lt;p&gt;I am listing two cases here, where I think programmers abuse function parameters and write sloppy code, which can easily be avoided:&lt;/p&gt;
+
+&lt;h2&gt;Default Parameters&lt;/h2&gt;
+
+&lt;p&gt;Default parameters serve a purpose, but only when you use them properly. Their only purpose is to provide a default value for a parameter. However problem arises, when the default value of the function is considered a special case inside the function. If this is being done for a single parameter, it is still acceptable. Complexities arise when you have more than one default parameter in a function and the function logic depends on a combination of these special values of function parameters. This is a very subtle trap and one should avoid falling into this trap.&lt;/p&gt;
+
+&lt;p&gt;As a rule of thumb, there should not be any special handling inside the function for the default function parameters. Deviating from this rule will generally land you into unmaintainable code.&lt;/p&gt;
+
+&lt;h2&gt;Function Overloading&lt;/h2&gt;
+
+&lt;p&gt;A lot of programmers abuse function parameters when they should instead have used function overloading. For example, in a trading application you may get different types of data, like last trade price, order depth (best 5 bids/asks), index values etc. To update the market data, a programmer may write a function:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;bool MarketData::update(LastTradePrice* price,
+                        OrderDepth* depth,
+                Index* index)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Such a function is often internally implemented as:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;if (price != 0)
+    logic for updating LTP
+else if (depth != 0)
+    logic for updating order depth
+else if (index != 0)
+     logic for updating index values
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now, when the LastTradePrice data arrives, the call to the update functions looks like:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt; market-&amp;gt;update(price, 0, 0);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In this example, instead of using function overloading to update inherently different kind of data in a market data widget, the programmer falls into a trap of using function arguments. You must avoid such spaghetti code. Function overloading is a very neat way to handle similar actions on inherently different type of data without polluting the namespace. So, you would have overloaded functions as:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;bool MarketData::update(const LastTradePrice&amp;amp; );
+bool MarketData::update(const OrderDepth&amp;amp; );
+bool MarketData::update(const Index&amp;amp; );
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As an added benefit, you also avoid pointers here and can rather rely on strict type checking. However, in languages like C, where you cannot overload functions, you need to have different functions handling different data. For example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;int updateLastTradePrice(LastTradePrice* price);
+int updateOrderDepth(OrderDepth* depth);
+int updateIndex(Index* index);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;These are the two subtle but fairly common mistakes I have observed in the code I have seen over the last year and a half. It is fairly simple to avoid these mistakes:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Do not make your behaviour of your functions dependent on default function parameters.&lt;/li&gt;
+&lt;li&gt;Create different functions (or overloads) for similar behaviour with different data, rather than adding function parameters.&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Reviving my Blog</title>
