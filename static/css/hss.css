@@ -1,12 +1,15 @@
 body {
-	font: 18px/1.5em "Domine", Georgia, Times, serif;
+	font: 16px/1.5em "Domine", Georgia, Times, serif;
 	color: black;
 	background: white;
 }
 
 h1, h2 {
-    font-family: "Marcellus", sans;
-    color: orange;
+    font-size: 24px;
+    /*font-family: "Marcellus", sans;*/
+    /* color: orange; */
+    font-family: "Domine", Georgia, Times, serif;
+    color: rgb(51, 102, 136);
     line-height: 110%;
 }
 
@@ -17,7 +20,8 @@ h3, h4, h5 {
 }
 
 a {
-	color: orange;
+  color: rgb(51, 102, 136);
+/*color: orange; */
 	/* color: #AABF73; */
 	text-decoration: none;
 }
@@ -130,4 +134,19 @@ p.intro:first-letter {
 .job_data {
 	display: block;
 	margin: 10px;
+}
+code {
+    font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;
+    background-color: rgb(238, 238, 238);
+    font-size: 14px;
+}
+
+pre {
+    padding: 5px;
+    font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;
+    margin-bottom: 10px;
+    background-color: rgb(238, 238, 238);
+    overflow: auto;
+    width: auto;
+    max-height: 600px;
 }
