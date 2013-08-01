@@ -26,34 +26,44 @@ As a rule of thumb, there should not be any special handling inside the function
 
 A lot of programmers abuse function parameters when they should instead have used function overloading. For example, in a trading application you may get different types of data, like last trade price, order depth (best 5 bids/asks), index values etc. To update the market data, a programmer may write a function:
 
+{% highlight cpp %}
     bool MarketData::update(LastTradePrice* price,
                             OrderDepth* depth,
-		            Index* index)
+                            Index* index)
+{% endhighlight %}
 
 Such a function is often internally implemented as:
 
+{% highlight cpp %}
     if (price != 0)
-        logic for updating LTP
+        // logic for updating LTP
     else if (depth != 0)
-        logic for updating order depth
+        // logic for updating order depth
     else if (index != 0)
-         logic for updating index values
+        // logic for updating index values
+{% endhighlight %}
 
 Now, when the LastTradePrice data arrives, the call to the update functions looks like:
 
+{% highlight cpp %}
      market->update(price, 0, 0);
+{% endhighlight %}
 
 In this example, instead of using function overloading to update inherently different kind of data in a market data widget, the programmer falls into a trap of using function arguments. You must avoid such spaghetti code. Function overloading is a very neat way to handle similar actions on inherently different type of data without polluting the namespace. So, you would have overloaded functions as:
 
+{% highlight cpp %}
     bool MarketData::update(const LastTradePrice& );
     bool MarketData::update(const OrderDepth& );
     bool MarketData::update(const Index& );
+{% endhighlight %}
 
 As an added benefit, you also avoid pointers here and can rather rely on strict type checking. However, in languages like C, where you cannot overload functions, you need to have different functions handling different data. For example:
 
+{% highlight cpp %}
     int updateLastTradePrice(LastTradePrice* price);
     int updateOrderDepth(OrderDepth* depth);
     int updateIndex(Index* index);
+{% endhighlight %}
 
 ## Conclusion
 
