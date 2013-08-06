@@ -26,5 +26,8 @@ __01 August 2013 - Chandigarh, India__
     + C/C++ -> Code Generation -> Runtime Library - Multi-threaded DLL (`/MD`)
     + C/C++ -> Langugage -> Treat WChar_t As Built in Type - No (`/Zc:wchar_t-`) - This is required because this is how Qt treats `wchar_t` types.
 
-You should be able to generate .lib files now.
++ Build all the libraries with Visual Studio and you should be able to generate .lib files now.
 
++ Add the following in `.pro` file in your application to generate .pdb file:
+
+        QMAKE_CFLAGS_RELEASE += -Zi
