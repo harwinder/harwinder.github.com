@@ -1,5 +1,5 @@
 body {
-	font: 16px/1.5em "Domine", Georgia, Times, serif;
+	font: 18px/1.5em "Varela", sans-serif;
 	color: black;
 	background: white;
 }
@@ -8,13 +8,13 @@ h1, h2 {
     font-size: 24px;
     /*font-family: "Marcellus", sans;*/
     /* color: orange; */
-    font-family: "Domine", Georgia, Times, serif;
+    font-family: "Trykker", Georgia, Times, serif;
     color: rgb(51, 102, 136);
     line-height: 110%;
 }
 
 h3, h4, h5 {
-    font-family: "Marcellus", sans;
+    font-family: "Trykker", sans;
     color: lightblue;
     line-height: 110%;
 }
@@ -138,7 +138,7 @@ p.intro:first-letter {
 code {
     font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;
     background-color: rgb(238, 238, 238);
-    font-size: 14px;
+    font-size: 18px;
 }
 
 pre {
