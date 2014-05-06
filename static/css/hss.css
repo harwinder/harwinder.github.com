@@ -1,5 +1,5 @@
 body {
-	font: 18px/1.5em "Varela", sans-serif;
+	font: 18px/1.5em "Poly", sans-serif;
 	color: black;
 	background: white;
 }
@@ -8,7 +8,7 @@ h1, h2 {
     font-size: 24px;
     /*font-family: "Marcellus", sans;*/
     /* color: orange; */
-    font-family: "Trykker", Georgia, Times, serif;
+    font-family: "Abel", Georgia, Times, serif;
     color: rgb(51, 102, 136);
     line-height: 110%;
 }
