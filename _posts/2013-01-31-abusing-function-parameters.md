@@ -4,11 +4,6 @@ title: Abusing Function Parameters
 summary: How programmers abuse function parameters and how to avoid it
 ---
 
-# {{ page.title }}
-
-__31 Jan 2013 - Chandigarh, India__
-
-
 ## Introduction
 
 Functions are the building blocks for procedural programming. They are very useful constructs, which increases modularity of a program. Inputs to a function are usually specified as parameters and output is generally available from the function in the form of return value.
@@ -46,7 +41,7 @@ Such a function is often internally implemented as:
 Now, when the LastTradePrice data arrives, the call to the update functions looks like:
 
 {% highlight cpp %}
-     market->update(price, 0, 0);
+    market->update(price, 0, 0);
 {% endhighlight %}
 
 In this example, instead of using function overloading to update inherently different kind of data in a market data widget, the programmer falls into a trap of using function arguments. You must avoid such spaghetti code. Function overloading is a very neat way to handle similar actions on inherently different type of data without polluting the namespace. So, you would have overloaded functions as:

@@ -4,10 +4,6 @@ title: Building Google Breakpad on Windows for Qt applications
 summary: Documenting the process to build Google Breakpad, crash reporting tool on Windows, so that it can be used with Qt applications
 ---
 
-# {{ page.title }}
-
-__01 August 2013 - Chandigarh, India__
-
 [Google Breakpad](http://code.google.com/p/google-breakpad/) is a multi-platform crash reporting library. However, I had a tough time building it with Visual Studio 2010 Express for a QT application, which is supposed to be run on Windows.
 
 + Download the latest snapshot of breakpad source code, by checking out a copy of the code from SVN:

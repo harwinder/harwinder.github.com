@@ -1,6 +1,10 @@
-title: Harwinder Sidhu
+name: "Harwinder Sidhu"
+markdown: redcarpet
+highlighter: pygments
 permalink: /blog/:year/:month/:day/:title
-markdown: rdiscount
-pygments: true
-exclude:
-  README.md
+exclude: [README.md, LICENSE, Makefile]
+
+# Information for the Atom feed
+gereksiz:
+   author: "Harwinder Sidhu"
+   email: "harwinder@gmail.com"

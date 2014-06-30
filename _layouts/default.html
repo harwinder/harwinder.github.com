@@ -1,66 +1,26 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-  <head>
-    <meta http-equiv="content-type" content="application/xhtml+xml; charset=iso-8859-1" />
-    <meta name="author" content="Harwinder Sidhu" />
-    <meta name="robots" content="all" />
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta name="description" content="Personal blog of Harwinder Sidhu">
+      <meta name="author" content="Harwinder Sidhu">
+      <meta name="viewport" content="width=device-width">
+      <link rel="stylesheet" href="/css/syntax.css">
+      <link rel="stylesheet" href="/css/main.css">
+      <link rel="stylesheet" href="/css/normalize.css">
+      <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+      <link rel="icon" href="/favicon.ico" type="image/x-icon">
+      <link rel="alternate" type="application/atom+xml" href="/atom.xml">
+      <title>{{ page.title }}</title>
+   </head>
 
-    <title>{{ page.title }}</title>
+   <body>
+      <main>
+         <header>
+            <h1 class="title"><a href="/">{{ site.name }}</a></h1>
+         </header>
 
-<!-- <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/base-min.css"> -->
-<!-- <link href="http://yui.yahooapis.com/pure/0.4.2/pure-min.css" rel="stylesheet"></link> -->
-    <style type="text/css" media="all">
-      @import "/static/css/hss.css";
-      @import "/static/css/syntax.css";
-    </style>
-
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-37365601-1']);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-
-    </script>
-
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Poly|Abel' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Cutive' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Varela|Trykker' rel='stylesheet' type='text/css'>
-      <link href='http://fonts.googleapis.com/css?family=Noticia+Text' rel='stylesheet' type='text/css'>
-    </head>
-
-    <body id="main">
-      <div id="content">
-	<div id="header" align="center">
-	  <h2><a href="/" title="harwinder.in">{{ site.title }}</a></h2>
-	</div>
-
-	<div id="content_body">
-	  {{ content }}
-	</div>
-
-	<div id="footer">
-	  <div id="navigation">
-	    <span class="navitem"><a href="http://twitter.com/harwinder" title="Twitter">Twitter</a></span> |
-	    <span class="navitem"><a href="http://in.linkedin.com/in/harwinder/" title="LinkedIn">LinkedIn</a></span> |
-	    <span class="navitem"><a href="http://github.com/harwinder" title="Harwinder's github repo">GitHub</a></span> |
-	    <!--<span class="navitem"><a href="/resume.html" title="Harwinder's resume">Resume</a></span> |-->
-	    <!-- 				<span class="navitem"><a href="/static/pgp.txt" title="PGP Key">PGP Key</a></span> | -->
-	    <span class="navitem">
-	      <a href="http://feeds.feedburner.com/harwinderblog" rel="alternate" type="application/rss+xml">
-		<img src="http://www.feedburner.com/fb/images/pub/feed-icon16x16.png" alt="" style="vertical-align:middle;border:0"/>
-	      </a>
-	    </span>
-	  </div>
-	</div>
-      </div>
-
-    </body>
-  </html>
+         {{ content }}
+      </main>
+   </body>
+</html>
