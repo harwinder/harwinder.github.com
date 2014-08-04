@@ -13,6 +13,8 @@ Here are some of my "social" accounts:
 * [LinkedIn][linked]
 * [GitHub][github]
 
+*Disclaimer*: The views expressed on this website are my own and do not reflect those of my employer or its clients.
+
 [github]: http://github.com/harwinder
 [linked]: http://in.linkedin.com/in/harwinder/
 [twitter]: http://twitter.com/harwinder
