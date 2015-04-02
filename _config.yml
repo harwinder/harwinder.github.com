@@ -1,6 +1,6 @@
 name: "Harwinder Sidhu"
 markdown: redcarpet
-highlighter: pygments
+# highlighter: pygments
 permalink: /blog/:year/:month/:day/:title
 exclude: [README.md, LICENSE, Makefile]
 

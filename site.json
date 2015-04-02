@@ -1,12 +1,12 @@
 ---
-layout: nil
+layout: null
 ---
 
 [
 {% for item in site.posts %}
 {
    "title": {{ item.title | jsonify }},
-   "date":  {{ item.date  | jsonify }},
+   "date":  {{ item.date  | date_to_rfc822 | jsonify }},
    "url":   {{ item.url   | jsonify }}
 },
 {% endfor %}
