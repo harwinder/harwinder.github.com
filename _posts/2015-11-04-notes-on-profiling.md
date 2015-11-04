@@ -14,12 +14,16 @@ summary: My notes on profiling and using the output to find bottnecks in the app
 
 ### Tools required to generate (beautiful)call graph
 
+
 {% highlight bash %}
 yum install graphviz
 pip install gprof2dot
 {% endhighlight %}
 
+gprof2dot is also available from [this](https://github.com/jrfonseca/gprof2dot) link.
+
 ### Generate Call Graph
+
 
 {% highlight bash %}
 /path/to/your/executable arg1 arg2
